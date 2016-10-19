@@ -18,7 +18,7 @@ int main() {
   for (int i = 0; i < testcases; i++) {
     cin >> n;
 
-    if (n < MAX_ELEMS) {
+    if (n < MAX_ELEMS + 1) {
       for (int j = 0; j < n; j++) {
         cin >> v[j];
       }
@@ -45,7 +45,7 @@ int main() {
 void paresImpares (int v[], int n, bool &existe, int &p) {
   int q = 0;
 
-  while (q < n - 1 && v[q] % 2 == 0) {
+  while (q < n && v[q] % 2 == 0) {
     q++;
   }
 
@@ -74,7 +74,7 @@ bool pares(int v[], int s, int t) {
 
 bool impares(int v[], int s, int t) {
   bool esImpar = true;
-  for (int i = s + 1; i < t; i++) {
+  for (int i = s; i < t; i++) {
     if (v[i] % 2 == 0) {
       esImpar = false;
     }
