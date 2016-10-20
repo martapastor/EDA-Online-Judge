@@ -21,7 +21,7 @@ int main() {
 		cin >> testcase;
 	}
 
-	//system("pause");
+	system("pause");
 
 	return 0;
 }
