@@ -24,21 +24,26 @@ int main() {
 int letrasOrdenadas(string word) {
 	int num = 0, max = 0;
 
-	for (unsigned i = 0; i < word.length() - 1; i++) {
-		if(word.at(i) < word.at(i+1)) {
-			num++;
-		}
-		else if ((word.at(i) > word.at(i+1) || word.at(i) == word.at(i+1)) && max <= num) {
-			max = num + 1;
-			num = 0;
-		}
-		else if (word.at(i) > word.at(i+1) || word.at(i) == word.at(i+1)) {
-			num = 0;
-		}
+	if (word.length() == 1) {
+		return 1;
 	}
 
-	if (num > 0 && max == 0) { // Si todas las letras están ordenadas
-		max = num + 1;
+	for (unsigned i = 0; i < word.length() - 1; i++) {
+		if (word.at(i) < word.at(i+1)) {
+			num++;
+
+			if (num >= max) {
+				max = num + 1;
+			}
+		}
+		else if (word.at(i) > word.at(i+1) || word.at(i) == word.at(i+1)) {
+			if (num >= max) {
+				max = num + 1;
+			}
+
+			num = 0;
+		}
+
 	}
 
 	return max;
