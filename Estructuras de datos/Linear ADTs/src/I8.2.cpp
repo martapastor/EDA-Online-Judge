@@ -565,8 +565,6 @@ int main() {
 }
 
 bool dehesapila(Queue<int> colaIni, Queue<int> colaFin) {
-	bool ordenCorrecto = true;
-
 	Stack<int> pila;
 
 	pila.push(colaIni.front());
@@ -626,6 +624,7 @@ bool dehesapila(Queue<int> colaIni, Queue<int> colaFin) {
 				pila.push(colaIni.front());
 				colaIni.pop_front();
 				cout << "Wagon " << pila.top() << " in" << endl;
+
 				cout << "Wagon " << pila.top() << " out" << endl;
 				colaFin.pop_front();
 				pila.pop();
@@ -636,5 +635,5 @@ bool dehesapila(Queue<int> colaIni, Queue<int> colaFin) {
 		}
 	}
 
-	return ordenCorrecto;
+	return true;
 }
